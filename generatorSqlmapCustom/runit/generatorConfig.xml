@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry location="mysql-connector-java-5.1.28-bin.jar"/>
+	<context id="testTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://su.gobrand.top:3306/taotao" userId="taotao"
+			password="Password">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.taotao.pojo" targetProject=".\src">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="com.taotao.mapper"  targetProject=".\src">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.taotao.mapper"  targetProject=".\src">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		<table schema="" tableName="tb_content"></table>
+		<table schema="" tableName="tb_content_category"></table>
+		<table schema="" tableName="tb_item"></table>
+		<table schema="" tableName="tb_item_cat"></table>
+		<table schema="" tableName="tb_item_desc"></table>
+		<table schema="" tableName="tb_item_param"></table>
+		<table schema="" tableName="tb_item_param_item"></table>
+		<table schema="" tableName="tb_order"></table>
+		<table schema="" tableName="tb_order_item"></table>
+		<table schema="" tableName="tb_order_shipping"></table>
+		<table schema="" tableName="tb_user"></table>
+
+	</context>
+</generatorConfiguration>
